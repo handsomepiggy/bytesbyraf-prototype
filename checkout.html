@@ -1,39 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Checkout</title>
+  <meta charset="UTF-8">
+  <title>Cookie Corner – Checkout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="cart.html">Cart</a>
-    <a href="admin.html">Admin</a>
+    <div class="logo">
+      <span>🍪</span>
+      <div>Cookie Corner</div>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Cookies</a>
+      <a href="cart.html">Cart</a>
+      <a href="admin.html">Admin</a>
+    </div>
   </nav>
 </header>
 
-<div class="container">
-  <h1>Checkout</h1>
+<main class="container">
+  <h1 class="section-title">Checkout</h1>
 
   <div class="two-col">
-    <div>
-      <h2>Customer Details</h2>
-      <p>Name: ___________</p>
-      <p>Phone: ___________</p>
-      <p>Address: ___________</p>
+    <div class="card">
+      <h2 style="margin-bottom:8px;">Customer Details</h2>
+      <p>Name: ____________________</p>
+      <p>Phone: ____________________</p>
+      <p>Address: ___________________________________</p>
+      <p>Payment Method: ____________________</p>
+      <p style="margin-top:10px; font-size:13px; color:#6b4b2e;">
+        (For now, this is just a visual placeholder. Dummy payment flow and form handling will be added later with JavaScript.)
+      </p>
     </div>
 
-    <div>
-      <h2>Order Summary</h2>
-      <p>Sample Product x1 — RM 39.90</p>
-      <p>Total: RM 39.90</p>
+    <div class="card">
+      <h2 style="margin-bottom:8px;">Order Summary</h2>
+      <p>Chocolate Chip Cookie x2 — RM 7.00</p>
+      <p>Matcha Cookie x1 — RM 4.00</p>
+      <p style="margin-top:10px;"><strong>Total: RM 11.00</strong></p>
+      <p class="hero-badge" style="margin-top:12px;">✅ Dummy order confirmation page will be implemented next phase.</p>
     </div>
   </div>
+</main>
 
-</div>
+<footer>
+  © 2025 Cookie Corner.
+</footer>
 
 </body>
 </html>
