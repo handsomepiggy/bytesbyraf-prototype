@@ -1,37 +1,66 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Cart</title>
+  <meta charset="UTF-8">
+  <title>Cookie Corner – Cart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="cart.html">Cart</a>
-    <a href="admin.html">Admin</a>
+    <div class="logo">
+      <span>🍪</span>
+      <div>Cookie Corner</div>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Cookies</a>
+      <a href="cart.html">Cart</a>
+      <a href="admin.html">Admin</a>
+    </div>
   </nav>
 </header>
 
-<div class="container">
-  <h1>Your Cart</h1>
+<main class="container">
+  <h1 class="section-title">Your Cookie Cart</h1>
+  <p style="color:#6b4b2e; margin-bottom:8px;">For halfway check, this is a static layout. In the final phase we will connect it to JavaScript and the database.</p>
 
-  <table>
-    <tr>
-      <th>Product</th>
-      <th>Price</th>
-      <th>Qty</th>
-    </tr>
+  <div class="card">
+    <table>
+      <tr>
+        <th>Cookie</th>
+        <th>Price</th>
+        <th>Quantity</th>
+      </tr>
+      <tr>
+        <td>Chocolate Chip Cookie</td>
+        <td>RM 3.50</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>Matcha Cookie</td>
+        <td>RM 4.00</td>
+        <td>1</td>
+      </tr>
+    </table>
 
-    <tr>
-      <td>Sample Product</td>
-      <td>RM 39.90</td>
-      <td>1</td>
-    </tr>
-  </table>
-</div>
+    <p style="text-align:right; margin-top:10px;">
+      <strong>Total (example): RM 11.00</strong>
+    </p>
+
+    <p style="margin-top:10px;">
+      <a href="products.html" class="btn btn-secondary">Continue Shopping</a>
+      <a href="checkout.html" class="btn btn-primary">Proceed to Checkout</a>
+    </p>
+  </div>
+</main>
+
+<footer>
+  © 2025 Cookie Corner.
+</footer>
 
 </body>
 </html>
