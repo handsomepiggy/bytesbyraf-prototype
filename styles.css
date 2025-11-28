@@ -1,15 +1,16 @@
-/* IMPORT FONTS: Fredoka (Headings) and Quicksand (Body text) */
+/* --- 1. FONTS & VARIABLES --- */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@400;700&display=swap');
 
 :root {
-  /* COOKIE CORNER COLOR PALETTE */
-  --bg-color: #FFF8F0;          /* Creamy Dough Background */
+  /* Cookie Corner Palette */
+  --bg-color: #FFF8F0;          /* Creamy Dough */
   --card-bg: #FFFFFF;           /* White */
   --primary-brown: #8D6E63;     /* Milk Chocolate */
   --dark-brown: #5D4037;        /* Dark Chocolate (Text) */
   --accent-gold: #FFB74D;       /* Golden Baked */
-  --shadow-soft: 0 4px 15px rgba(93, 64, 55, 0.1); /* Soft shadow */
-  --radius: 12px;               /* Rounded corners */
+  --danger-red: #FF7043;        /* For "Hot" badges */
+  --shadow-soft: 0 4px 15px rgba(93, 64, 55, 0.1); 
+  --radius: 12px;               
 }
 
 body {
@@ -18,9 +19,12 @@ body {
   background-color: var(--bg-color);
   color: var(--dark-brown);
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Keeps footer at bottom */
 }
 
-/* --- HEADER & NAVIGATION --- */
+/* --- 2. HEADER & NAV --- */
 header {
   background: var(--card-bg);
   padding: 15px 20px;
@@ -28,7 +32,6 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: none; /* Removed the old hard border */
 }
 
 nav {
@@ -44,6 +47,7 @@ nav {
   font-size: 1.5rem;
   color: var(--primary-brown);
   text-decoration: none;
+  font-weight: 600;
 }
 
 .nav-links a {
@@ -51,30 +55,55 @@ nav {
   text-decoration: none;
   color: var(--dark-brown);
   font-weight: 700;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
-.nav-links a:hover {
+.nav-links a:hover, .nav-links a.active {
   color: var(--accent-gold);
 }
 
-/* --- LAYOUT & TYPOGRAPHY --- */
+/* --- 3. LAYOUT & HERO --- */
 .container {
   max-width: 1100px;
   margin: auto;
   padding: 30px 20px;
+  flex: 1; /* Pushes footer down */
+  width: 100%;
+  box-sizing: border-box;
 }
 
-h1, h2, h3, .section-title {
+.hero {
+  background-color: var(--primary-brown);
+  /* Placeholder background pattern */
+  background-image: linear-gradient(rgba(93, 64, 55, 0.8), rgba(93, 64, 55, 0.8)), url('https://via.placeholder.com/1200x400/5D4037/FFFFFF?text=Bakery+Background');
+  background-size: cover;
+  background-position: center;
+  padding: 60px 20px;
+  border-radius: var(--radius);
+  color: white;
+  text-align: center;
+  margin-bottom: 40px;
+  box-shadow: var(--shadow-soft);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin: 0 0 10px 0;
+}
+
+.section-title {
   font-family: 'Fredoka', sans-serif;
   color: var(--dark-brown);
-  margin-top: 0;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--accent-gold);
+  display: inline-block;
+  padding-bottom: 5px;
 }
 
-/* --- CARDS (Products) --- */
+/* --- 4. CARDS & GRID --- */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 25px;
 }
 
@@ -82,65 +111,120 @@ h1, h2, h3, .section-title {
   background: var(--card-bg);
   padding: 15px;
   border-radius: var(--radius);
-  border: none;
   box-shadow: var(--shadow-soft);
   transition: transform 0.2s ease;
-  text-align: center;
+  position: relative; /* For badges */
+  overflow: hidden;
 }
 
 .card:hover {
-  transform: translateY(-5px); /* Floats up slightly on hover */
+  transform: translateY(-5px);
 }
 
 .card img {
   width: 100%;
-  height: 160px;
+  height: 180px;
   object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  margin: 10px 0 5px;
+  font-family: 'Fredoka', sans-serif;
 }
 
 .price {
   color: var(--primary-brown);
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  display: block;
 }
 
-/* --- BUTTONS --- */
+/* --- 5. BADGES --- */
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--accent-gold);
+  color: var(--dark-brown);
+  padding: 5px 12px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.badge.hot {
+  background-color: var(--danger-red);
+  color: white;
+}
+
+/* --- 6. BUTTONS --- */
 .btn {
   display: inline-block;
   background-color: var(--primary-brown);
   color: white;
-  padding: 10px 20px;
-  border-radius: 50px; /* Pill shape */
+  padding: 12px 25px;
+  border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
-  font-size: 0.9rem;
-  margin-top: 10px;
-  transition: background 0.3s;
   border: none;
   cursor: pointer;
+  transition: background 0.3s;
+  text-align: center;
 }
 
 .btn:hover {
   background-color: var(--accent-gold);
+  color: var(--dark-brown);
 }
 
 .btn-block {
   display: block;
   width: 100%;
-  box-sizing: border-box; /* Ensures padding doesn't break width */
 }
 
-/* --- TWO COLUMN LAYOUT (Detail, Checkout, Admin) --- */
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: start;
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid var(--primary-brown);
+  color: var(--primary-brown);
 }
 
-/* --- TABLES (Cart) --- */
+.btn-secondary:hover {
+  background-color: var(--primary-brown);
+  color: white;
+}
+
+/* --- 7. FORMS (Inputs) --- */
+input[type="text"], 
+input[type="email"], 
+input[type="number"], 
+textarea, 
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary-brown);
+  box-shadow: 0 0 0 3px rgba(141, 110, 99, 0.2);
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* --- 8. TABLES & LISTS --- */
 table {
   width: 100%;
   border-collapse: separate;
@@ -160,21 +244,33 @@ td {
   box-shadow: var(--shadow-soft);
 }
 
-tr td:first-child { border-top-left-radius: 10px; border-bottom-left-radius: 10px; }
-tr td:last-child { border-top-right-radius: 10px; border-bottom-right-radius: 10px; }
+tr td:first-child { border-radius: 10px 0 0 10px; }
+tr td:last-child { border-radius: 0 10px 10px 0; }
 
-/* --- RESPONSIVE MOBILE FIX --- */
+/* --- 9. TWO COLUMN & FOOTER --- */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+footer {
+  background-color: var(--primary-brown);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 50px;
+}
+
+/* --- 10. MOBILE RESPONSIVE --- */
 @media (max-width: 768px) {
   .two-col {
-    grid-template-columns: 1fr; /* Stack vertically on phone */
+    grid-template-columns: 1fr;
   }
-  
   nav {
     flex-direction: column;
     gap: 15px;
   }
-  
-  .nav-links a {
-    margin: 0 10px;
-  }
+  .hero h1 { font-size: 2rem; }
 }
