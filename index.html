@@ -3,14 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home - Cookie Corner</title>
+  <title>Home - bitesbyraf</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header>
   <nav>
-    <a href="index.html" class="logo">🍪 Cookie Corner</a>
+    <a href="index.html" class="logo-container">
+      <img src="logo.jpg" alt="bitesbyraf Logo" class="logo-img">
+      <span class="logo-text">bitesbyraf</span>
+    </a>
+
     <div class="nav-links">
       <a href="index.html" class="active">Home</a>
       <a href="products.html">Products</a>
@@ -22,42 +26,44 @@
 
 <div class="container">
   <div class="hero">
-    <h1>Welcome to Cookie Corner!</h1>
-    <p>Freshly baked, gooey, and delicious cookies delivered to your doorstep.</p>
+    <h1>welcome to bitesbyraf</h1>
+    <p>Homemade with love, baked for your happiness.</p>
     <br>
-    <a href="products.html" class="btn" style="background: white; color: var(--primary-brown);">Order Now</a>
+    <a href="products.html" class="btn" style="background: white; color: var(--primary-pink);">Order Now</a>
   </div>
 
-  <h2 class="section-title">Featured Fresh Bakes</h2>
+  <div style="text-align: center;">
+    <h2 class="section-title">Fresh from the Oven</h2>
+  </div>
 
   <div class="grid">
     <div class="card">
-      <span class="badge hot">Best Seller</span>
-      <img src="https://via.placeholder.com/300x200/8D6E63/FFFFFF?text=Choc+Chip">
+      <span class="badge">Best Seller</span>
+      <img src="https://via.placeholder.com/300x200/FF9EAA/FFFFFF?text=Signature+Cookie" alt="Cookie">
       <h3>Classic Choc Chip</h3>
       <span class="price">RM 29.90</span>
-      <a href="product.html" class="btn btn-block">View Details</a>
+      <a href="product.html" class="btn btn-block">Add to Cart</a>
     </div>
 
     <div class="card">
-      <span class="badge">New</span>
-      <img src="https://via.placeholder.com/300x200/8D6E63/FFFFFF?text=Oatmeal">
-      <h3>Golden Oatmeal</h3>
-      <span class="price">RM 19.90</span>
-      <a href="product.html" class="btn btn-block">View Details</a>
+      <img src="https://via.placeholder.com/300x200/FF9EAA/FFFFFF?text=Fudgy+Brownie" alt="Brownie">
+      <h3>Fudgy Brownie</h3>
+      <span class="price">RM 35.00</span>
+      <a href="product.html" class="btn btn-block">Add to Cart</a>
     </div>
-
+    
     <div class="card">
-      <img src="https://via.placeholder.com/300x200/8D6E63/FFFFFF?text=Red+Velvet">
-      <h3>Red Velvet</h3>
-      <span class="price">RM 24.90</span>
-      <a href="product.html" class="btn btn-block">View Details</a>
+      <span class="badge" style="background:var(--primary-text)">New</span>
+      <img src="https://via.placeholder.com/300x200/FF9EAA/FFFFFF?text=Matcha+Tart" alt="Matcha">
+      <h3>Matcha Tart</h3>
+      <span class="price">RM 15.00</span>
+      <a href="product.html" class="btn btn-block">Add to Cart</a>
     </div>
   </div>
 </div>
 
 <footer>
-  <p>&copy; 2025 Cookie Corner. Built with 🍪 and HTML/CSS.</p>
+  <p>&copy; 2025 bitesbyraf. Baked with <span style="color:red">♥</span> in Kuching.</p>
 </footer>
 
 </body>
