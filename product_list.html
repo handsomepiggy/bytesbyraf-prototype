@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - bitesbyraf</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo-container">
+      <img src="images/logo.png" alt="bitesbyraf Logo" class="logo-img">
+      <span class="logo-text">bitesbyraf</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="product_list.html" class="active">Products</a>
+      <a href="cart.html">Cart (<span id="cart-count" style="display:none;">0</span>)</a>
+      <a href="admin.html">Admin</a>
+    </div>
+  </nav>
+</header>
+
+<div class="container">
+  <div style="text-align: center; margin-bottom: 50px;">
+    <h1 class="section-title" style="font-size: 2.5rem; margin-bottom: 5px;">Our Menu</h1>
+    <p style="font-weight: 600; font-size: 1.1rem; color: var(--primary-text);">Baked treats, organized by category.</p>
+  </div>
+
+  <div id="brownies" style="padding-top: 80px; margin-top: -80px;">
+    <h2 class="section-title" style="text-align: left;">Brownies</h2>
+    <div class="grid">
+      <div class="card" data-id="BR01" data-name="Classic Fudgy Brownie" data-price="35.00">
+        <span class="badge">Best Seller</span>
+        <img src="images/products/brownie1.png" alt="Fudgy Brownie">
+        <h3>Classic Fudgy Brownie</h3>
+        <span class="price">RM 35.00</span>
+        <a href="#" onclick="addToCart('BR01', 'Classic Fudgy Brownie', 35.00); return false;" class="btn btn-block">Add to Cart</a>
+      </div>
+  
+      <div class="card" data-id="BR02" data-name="Nutella Swirl Brownie" data-price="40.00">
+        <img src="images/products/brownie2.png" alt="Nutella Brownie">
+        <h3>Nutella Swirl Brownie</h3>
+        <span class="price">RM 40.00</span>
+        <a href="#" onclick="addToCart('BR02', 'Nutella Swirl Brownie', 40.00); return false;" class="btn btn-block">Add to Cart</a>
+      </div>
+      
+      <div class="card" data-id="BR03" data-name="Pecan Crunch Brownie" data-price="42.00">
+        <img src="images/products/brownie3.png" alt="Pecan Brownie">
+        <h3>Pecan Crunch Brownie</h3>
+        <span class="price">RM 42.00</span>
+        <a href="#" onclick="addToCart('BR03', 'Pecan Crunch Brownie', 42.00); return false;" class="btn btn-block">Add to Cart</a>
+      </div>
+    </div>
+  </div>
+  
+  <br><br><br>
+
+  <div id="cheesecake" style="padding-top: 80px; margin-top: -80px;">
+    <h2 class="section-title" style="text-align: left;">Burnt Cheese Cake</h2>
+    <div class="grid">
+      <div class="card" data-id="CC01" data-name="Classic Burnt Cheesecake" data-price="80.00">
+        <span class="badge" style="background:var(--primary-text)">Signature</span>
+        <img src="images/products/cheesecake1.png" alt="Original BCC">
+        <h3>Classic Burnt Cheesecake</h3>
+        <span class="price">RM 80.00</span>
+        <a href="#" onclick="addToCart('CC01', 'Classic Burnt Cheesecake', 80.00); return false;" class="btn btn-block">Add to Cart</a>
+      </div>
+
+      <div class="card" data-id="CC02" data-name="Biscoff Burnt Cheesecake" data-price="95.00">
+        <img src="images/products/cheesecake2.png" alt="Biscoff BCC">
+        <h3>Biscoff Burnt Cheesecake</h3>
+        <span class="price">RM 95.00</span>
+        <a href="#" onclick="addToCart('CC02', 'Biscoff Burnt Cheesecake', 95.00); return false;" class="btn btn-block">Add to Cart</a>
+      </div>
+    </div>
+  </div>
+  
+  <br><br><br>
+
+  <div id="cupcakes" style="padding-top: 80px; margin-top: -80px;">
+    <h2 class="section-title" style="text-align: left;">Cupcakes</h2>
+    <div class="grid">
+      <div class="card" data-id="CP01" data-name="Pandan Cupcakes" data-price="45.00">
+        <span class="badge hot">Hot</span>
+        <img src="images/products/cupcake1.png" alt="Pandan Cupcake">
+        <h3>Pandan Cupcakes (Box of 6)</h3>
+        <span class="price">RM 45.00</span>
+        <a href="#" onclick="addToCart('CP01', 'Pandan Cupcakes (Box of 6)', 45.00); return false;" class="btn btn-block">Add to Cart</a>
+      </div>
+
+      <div class="card" data-id="CP02" data-name="Triple Chocolate Cupcakes" data-price="42.00">
+        <img src="images/products/cupcake2.png" alt="Chocolate Cupcake">
+        <h3>Triple Chocolate Cupcakes (Box of 6)</h3>
+        <span class="price">RM 42.00</span>
+        <a href="#" onclick="addToCart('CP02', 'Triple Chocolate Cupcakes (Box of 6)', 42.00); return false;" class="btn btn-block">Add to Cart</a>
+      </div>
+      
+      <div class="card" data-id="CP03" data-name="Classic Vanilla Bean" data-price="38.00">
+        <img src="images/products/cupcake3.png" alt="Vanilla Cupcake">
+        <h3>Classic Vanilla Bean (Box of 6)</h3>
+        <span class="price">RM 38.00</span>
+        <a href="#" onclick="addToCart('CP03', 'Classic Vanilla Bean (Box of 6)', 38.00); return false;" class="btn btn-block">Add to Cart</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2025 bitesbyraf. Baked with <span style="color:red">♥</span> in Kuching.</p>
+</footer>
+
+<div id="toast-box">Item added to cart!</div>
+
+<script src="cart.js" defer></script>
+</body>
+</html>

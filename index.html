@@ -11,14 +11,14 @@
 <header>
   <nav>
     <a href="index.html" class="logo-container">
-      <img src="logo.png" alt="bitesbyraf Logo" class="logo-img">
+      <img src="images/logo.png" alt="bitesbyraf Logo" class="logo-img">
       <span class="logo-text">bitesbyraf</span>
     </a>
 
     <div class="nav-links">
       <a href="index.html" class="active">Home</a>
-      <a href="products.html">Products</a>
-      <a href="cart.html">Cart</a>
+      <a href="product_list.html">Products</a>
+      <a href="cart.html">Cart (<span id="cart-count" style="display:none;">0</span>)</a>
       <a href="admin.html">Admin</a>
     </div>
   </nav>
@@ -29,35 +29,37 @@
     <h1>welcome to bitesbyraf</h1>
     <p>Homemade with love, baked for your happiness.</p>
     <br>
-    <a href="products.html" class="btn" style="background: white; color: var(--primary-pink);">Order Now</a>
+    <a href="#explore-categories" class="btn" style="background: white; color: var(--primary-pink);">View Categories</a>
   </div>
+  
+  <br><br><br> 
 
-  <div style="text-align: center;">
-    <h2 class="section-title">Fresh from the Oven</h2>
+  <div id="explore-categories" style="text-align: center; padding-top: 80px; margin-top: -80px;">
+    <h2 class="section-title">Explore Our Categories</h2>
+    <p style="font-weight: 600; font-size: 1.1rem; color: var(--primary-text);">Find your perfect treat from our main selections!</p>
+    <br>
   </div>
 
   <div class="grid">
-    <div class="card">
-      <span class="badge">Best Seller</span>
-      <img src="https://via.placeholder.com/300x200/FF9EAA/FFFFFF?text=Signature+Cookie" alt="Cookie">
-      <h3>Classic Choc Chip</h3>
-      <span class="price">RM 29.90</span>
-      <a href="product.html" class="btn btn-block">Add to Cart</a>
+    <div class="card" style="text-align: center;">
+      <img src="images/products/brownie1.png" alt="Brownies">
+      <h3>Brownies</h3>
+      <span class="price">Fudgy, rich, and decadent.</span>
+      <a href="product_list.html#brownies" class="btn btn-block">Shop Brownies</a>
     </div>
 
-    <div class="card">
-      <img src="https://via.placeholder.com/300x200/FF9EAA/FFFFFF?text=Fudgy+Brownie" alt="Brownie">
-      <h3>Fudgy Brownie</h3>
-      <span class="price">RM 35.00</span>
-      <a href="product.html" class="btn btn-block">Add to Cart</a>
+    <div class="card" style="text-align: center;">
+      <img src="images/products/cheesecake1.png" alt="Burnt Cheese Cake">
+      <h3>Burnt Cheese Cake</h3>
+      <span class="price">Creamy, caramelized, perfection.</span>
+      <a href="product_list.html#cheesecake" class="btn btn-block">Shop Cheesecakes</a>
     </div>
     
-    <div class="card">
-      <span class="badge" style="background:var(--primary-text)">New</span>
-      <img src="https://via.placeholder.com/300x200/FF9EAA/FFFFFF?text=Matcha+Tart" alt="Matcha">
-      <h3>Matcha Tart</h3>
-      <span class="price">RM 15.00</span>
-      <a href="product.html" class="btn btn-block">Add to Cart</a>
+    <div class="card" style="text-align: center;">
+      <img src="images/products/cupcake1.png" alt="Cupcakes">
+      <h3>Cupcakes</h3>
+      <span class="price">Small delights, big flavor.</span>
+      <a href="product_list.html#cupcakes" class="btn btn-block">Shop Cupcakes</a>
     </div>
   </div>
 </div>
@@ -66,5 +68,6 @@
   <p>&copy; 2025 bitesbyraf. Baked with <span style="color:red">♥</span> in Kuching.</p>
 </footer>
 
+<script src="cart.js" defer></script>
 </body>
 </html>

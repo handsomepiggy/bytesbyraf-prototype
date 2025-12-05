@@ -1,20 +1,19 @@
-/* --- 1. FONTS & GLOBAL RESET --- */
+/* ----- 1. FONTS & GLOBAL RESET ----- */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Quicksand:wght@400;600&display=swap');
 
-/* THIS FIXES THE BUTTON SPILLING OUT */
 * {
   box-sizing: border-box; 
 }
 
 :root {
   /* BITESBYRAF PALETTE */
-  --bg-color: #FFFAFB;          /* Very pale pink background */
-  --card-bg: #FFFFFF;           /* Pure White */
-  --primary-pink: #FF9EAA;      /* The Pink from the logo ring */
-  --primary-text: #2D2D2D;      /* Soft Black */
-  --accent-gold: #FFD54F;       /* Stars/Sparkles accents */
-  --danger-red: #FF7043;        /* For Hot badges */
-  --shadow-soft: 0 5px 20px rgba(255, 158, 170, 0.15); /* Pinkish shadow */
+  --bg-color: #FFFAFB;          
+  --card-bg: #FFFFFF;           
+  --primary-pink: #FF9EAA;      
+  --primary-text: #2D2D2D;      
+  --accent-gold: #FFD54F;       
+  --danger-red: #FF7043;        
+  --shadow-soft: 0 5px 20px rgba(255, 158, 170, 0.15); 
   --radius: 16px;               
 }
 
@@ -29,14 +28,16 @@ body {
   min-height: 100vh;
 }
 
-/* --- 2. HEADER & NAV --- */
+/* ----- 2. HEADER & NAV ----- */
 header {
   background: var(--card-bg);
-  padding: 10px 20px;
+  padding: 10px 20px; 
   box-shadow: 0 2px 15px rgba(0,0,0,0.03);
   position: sticky;
   top: 0;
   z-index: 1000;
+  height: 74px; 
+  min-height: 74px;
 }
 
 nav {
@@ -45,6 +46,8 @@ nav {
   align-items: center;
   max-width: 1100px;
   margin: auto;
+  height: 100%; 
+  line-height: normal; 
 }
 
 .logo-container {
@@ -59,7 +62,7 @@ nav {
   width: 50px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--primary-pink);
+  border: 2px solid var(--primary-pink); 
 }
 
 .logo-text {
@@ -70,10 +73,14 @@ nav {
 }
 
 .nav-links a {
-  margin-left: 20px;
+  display: inline-block; 
+  padding: 0 10px;
+  height: 54px; 
+  line-height: 54px; 
   text-decoration: none;
   color: var(--primary-text);
   font-weight: 600;
+  font-size: 1rem; 
   transition: color 0.3s;
 }
 
@@ -81,13 +88,39 @@ nav {
   color: var(--primary-pink);
 }
 
-/* --- 3. LAYOUT & HERO --- */
+/* ----- 3. LAYOUT & HERO ----- */
 .container {
   max-width: 1100px;
   margin: auto;
   padding: 30px 20px;
   flex: 1;
   width: 100%;
+}
+
+.hero {
+    min-height: 60vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: var(--primary-pink); 
+    border-radius: var(--radius);
+    padding: 40px; 
+    margin-bottom: 50px; 
+    color: white; 
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+    color: white; 
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
 }
 
 .section-title {
@@ -109,7 +142,7 @@ nav {
   border-radius: 2px;
 }
 
-/* --- 4. CARDS & BUTTONS --- */
+/* ----- 4. CARDS & BUTTONS ----- */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -177,7 +210,7 @@ nav {
   width: 100%;
 }
 
-/* --- 5. FORMS & TABLES --- */
+/* ----- 5. FORMS & TABLES ----- */
 input, textarea, select {
   width: 100%;
   padding: 12px;
@@ -215,7 +248,7 @@ td {
 tr td:first-child { border-radius: 10px 0 0 10px; }
 tr td:last-child { border-radius: 0 10px 10px 0; }
 
-/* --- 6. FOOTER & EXTRAS --- */
+/* ----- 6. FOOTER & EXTRAS ----- */
 footer {
   background-color: #FFF0F3;
   color: var(--primary-text);
@@ -232,7 +265,6 @@ footer {
   align-items: start;
 }
 
-/* Badge Updates */
 .badge {
   position: absolute;
   top: 10px;
@@ -247,7 +279,58 @@ footer {
 }
 .badge.hot { background-color: var(--danger-red); }
 
+/* ----- 7. TOAST NOTIFICATION (NEW) ----- */
+#toast-box {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: var(--primary-text);
+  color: #fff;
+  text-align: center;
+  border-radius: 50px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  opacity: 0;
+  transition: opacity 0.5s, bottom 0.5s;
+}
+
+#toast-box.show {
+  visibility: visible;
+  opacity: 1;
+  bottom: 50px; /* Moves up slightly when appearing */
+}
+
+/* ----- 8. MEDIA QUERIES (UPDATED) ----- */
 @media (max-width: 768px) {
   .two-col { grid-template-columns: 1fr; }
-  nav { flex-direction: column; gap: 15px; }
+  
+  header {
+    height: auto;
+    /* Reduced padding for mobile */
+    padding: 10px 10px; 
+  }
+  
+  nav { 
+    flex-direction: column; 
+    gap: 10px; 
+  }
+
+  /* NEW: Tighter spacing for mobile links */
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+  }
+  
+  .nav-links a {
+    font-size: 0.9rem;
+    height: 40px; 
+    line-height: 40px;
+    padding: 0 8px;
+  }
 }

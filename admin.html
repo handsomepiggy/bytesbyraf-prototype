@@ -11,12 +11,12 @@
 <header>
   <nav>
     <a href="index.html" class="logo-container">
-      <img src="logo.jpg" alt="bitesbyraf Logo" class="logo-img">
+      <img src="images/logo.png" alt="bitesbyraf Logo" class="logo-img">
       <span class="logo-text">bitesbyraf</span>
     </a>
     <div class="nav-links">
       <a href="index.html">View Site</a>
-      <a href="products.html">Products</a>
+      <a href="product_list.html">Products</a>
       <a href="admin.html" class="active">Settings</a>
     </div>
   </nav>
@@ -32,14 +32,22 @@
         <label>Product Name</label>
         <input type="text" placeholder="Cookie Name">
 
+        <label>Category</label>
+        <select>
+          <option value="" disabled selected>Select Category</option>
+          <option value="brownies">Brownies</option>
+          <option value="burnt_cheese_cake">Burnt Cheese Cake</option>
+          <option value="cupcake">Cupcake</option>
+        </select>
+
         <label>Price (RM)</label>
         <input type="number" placeholder="0.00">
 
         <label>Description</label>
         <textarea rows="3" placeholder="Description..."></textarea>
         
-        <label>Image URL</label>
-        <input type="text" placeholder="http://...">
+        <label>Product Image (JPG/PNG)</label>
+        <input type="file" accept=".jpg, .jpeg, .png">
 
         <button class="btn btn-block">Add Product</button>
       </form>
@@ -48,26 +56,17 @@
     <div class="card">
       <h2 style="font-family: 'Playfair Display', serif;">Existing Inventory</h2>
       <table style="font-size: 0.9rem;">
-        <tr>
-          <th>Name</th>
-          <th>Price</th>
-          <th>Action</th>
-        </tr>
-        <tr>
-          <td>Choc Chip</td>
-          <td>RM 29.90</td>
-          <td><a href="#" style="color: var(--danger-red); font-weight:bold;">Delete</a></td>
-        </tr>
-        <tr>
-          <td>Fudgy Brownie</td>
-          <td>RM 35.00</td>
-          <td><a href="#" style="color: var(--danger-red); font-weight:bold;">Delete</a></td>
-        </tr>
-        <tr>
-          <td>Matcha Tart</td>
-          <td>RM 15.00</td>
-          <td><a href="#" style="color: var(--danger-red); font-weight:bold;">Delete</a></td>
-        </tr>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="inventory-table-body">
+          <tr><td colspan="4" style="text-align: center; padding: 20px;">Loading inventory...</td></tr>
+        </tbody>
       </table>
     </div>
   </div>
@@ -77,5 +76,6 @@
   <p>&copy; 2025 bitesbyraf. Baked with <span style="color:red">♥</span> in Kuching.</p>
 </footer>
 
+<script src="cart.js" defer></script>
 </body>
 </html>
