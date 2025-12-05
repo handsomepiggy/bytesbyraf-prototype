@@ -334,3 +334,47 @@ footer {
     padding: 0 8px;
   }
 }
+
+/* ----- 9. NEW NAV ICON STYLES (ADDED) ----- */
+
+/* Override default link behavior for icons to align them vertically */
+.nav-links a {
+  display: inline-flex;  /* changed from inline-block to flex for better centering */
+  align-items: center;
+  justify-content: center;
+  height: 54px; 
+}
+
+/* Size the icons */
+.nav-icon {
+    width: 32px;        /* Icon size */
+    height: auto;
+    transition: transform 0.2s;
+}
+
+/* Hover effect: Pop up slightly */
+.nav-links a:hover .nav-icon {
+    transform: scale(1.15);
+}
+
+/* Active Page Indicator (Underline instead of pink text) */
+.nav-links a.active {
+    border-bottom: 3px solid var(--primary-pink);
+    color: inherit; 
+}
+
+/* Cart Count Badge (The red bubble) */
+.cart-badge {
+    background-color: var(--danger-red);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 5px;
+    position: absolute;
+    top: 8px;    /* Position slightly above the icon */
+    right: -5px; /* Position slightly to the right */
+    min-width: 18px;
+    text-align: center;
+    line-height: 1.2;
+}
