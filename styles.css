@@ -343,11 +343,12 @@ footer {
   align-items: center;
   justify-content: center;
   height: 54px; 
+  padding: 0 15px;
 }
 
 /* Size the icons */
 .nav-icon {
-    width: 32px;        /* Icon size */
+    width: 48px;        /* Icon size */
     height: auto;
     transition: transform 0.2s;
 }
